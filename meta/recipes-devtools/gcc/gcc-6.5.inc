@@ -2,13 +2,13 @@ require gcc-common.inc
 
 # Third digit in PV should be incremented after a minor release
 
-PV = "6.4.0"
+PV = "6.5.0"
 
 # BINV should be incremented to a revision after a minor gcc release
 
-BINV = "6.4.0"
+BINV = "6.5.0"
 
-FILESEXTRAPATHS =. "${FILE_DIRNAME}/gcc-6.4:${FILE_DIRNAME}/gcc-6.4/backport:"
+FILESEXTRAPATHS =. "${FILE_DIRNAME}/gcc-6.5:${FILE_DIRNAME}/gcc-6.5/backport:"
 
 DEPENDS =+ "mpfr gmp libmpc zlib"
 NATIVEDEPS = "mpfr-native gmp-native libmpc-native zlib-native"
@@ -34,8 +34,6 @@ SRC_URI = "\
            file://0001-gcc-4.3.1-ARCH_FLAGS_FOR_TARGET.patch \
            file://0008-missing-execinfo_h.patch \
            file://0009-c99-snprintf.patch \
-           file://0010-gcc-poison-system-directories.patch \
-           file://0011-gcc-poison-dir-extend.patch \
            file://0012-gcc-4.3.3-SYSROOT_CFLAGS_FOR_TARGET.patch \
            file://0013-64-bit-multilib-hack.patch \
            file://0014-optional-libstdc.patch \
@@ -74,16 +72,15 @@ SRC_URI = "\
            file://0047-libgcc_s-Use-alias-for-__cpu_indicator_init-instead-.patch \
            file://0048-sync-gcc-stddef.h-with-musl.patch \
            file://0054_all_nopie-all-flags.patch \
-           file://0055-unwind_h-glibc26.patch \
            file://0056-LRA-PR70904-relax-the-restriction-on-subreg-reload-f.patch \
            ${BACKPORTS} \
 "
 BACKPORTS = "\
            file://CVE-2016-6131.patch \
-           file://0057-ARM-PR-82445-suppress-32-bit-aligned-ldrd-strd-peeph.patch \
 "
-SRC_URI[md5sum] = "11ba51a0cfb8471927f387c8895fe232"
-SRC_URI[sha256sum] = "850bf21eafdfe5cd5f6827148184c08c4a0852a37ccf36ce69855334d2c914d4"
+
+SRC_URI[md5sum] = "edaeff1cc020b16a0c19a6d5e80dc2fd"
+SRC_URI[sha256sum] = "7ef1796ce497e89479183702635b14bb7a46b53249209a5e0f999bebf4740945"
 
 S = "${TMPDIR}/work-shared/gcc-${PV}-${PR}/gcc-${PV}"
 #S = "${TMPDIR}/work-shared/gcc-${PV}-${PR}/git"
