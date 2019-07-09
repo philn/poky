@@ -93,13 +93,13 @@ cpp_link_args = ${@meson_array('LDFLAGS', d)}
 gtkdoc_exe_wrapper = '${B}/gtkdoc-qemuwrapper'
 
 [host_machine]
-system = '${HOST_OS}'
+system = 'linux'
 cpu_family = '${@meson_cpu_family('HOST_ARCH', d)}'
 cpu = '${HOST_ARCH}'
 endian = '${@meson_endian('HOST', d)}'
 
 [target_machine]
-system = '${TARGET_OS}'
+system = 'linux'
 cpu_family = '${@meson_cpu_family('TARGET_ARCH', d)}'
 cpu = '${TARGET_ARCH}'
 endian = '${@meson_endian('TARGET', d)}'
